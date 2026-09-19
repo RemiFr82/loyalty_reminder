@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="loyalty_program_view_form_reminder" model="ir.ui.view">
+        <field name="name">loyalty.program.view.form.reminder</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="loyalty.loyalty_program_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Reminders" name="reminders">
+                    <field name="reminder_line_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="trigger_type"/>
+                            <field name="points_remaining"
+                                invisible="trigger_type != 'points_remaining'"
+                                required="trigger_type == 'points_remaining'"/>
+                            <field name="days_before"
+                                invisible="trigger_type != 'before_expiry'"
+                                required="trigger_type == 'before_expiry'"/>
+                            <field name="mail_template_id"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- loyalty.card.view.form (native, addons/loyalty/views/loyalty_card_views.xml) has no
+         <notebook> — added here to host the "Reminders" tab. -->
+    <record id="loyalty_card_view_form_reminder" model="ir.ui.view">
+        <field name="name">loyalty.card.view.form.reminder</field>
+        <field name="model">loyalty.card</field>
+        <field name="inherit_id" ref="loyalty.loyalty_card_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Reminders" name="reminders">
+                        <field name="reminder_line_ids" context="{'active_test': False}">
+                            <list editable="bottom" decoration-muted="not active">
+                                <field name="active" column_invisible="1"/>
+                                <field name="sequence" widget="handle"/>
+                                <field name="trigger_type"/>
+                                <field name="points_remaining"
+                                    invisible="trigger_type != 'points_remaining'"
+                                    required="trigger_type == 'points_remaining'"/>
+                                <field name="days_before"
+                                    invisible="trigger_type != 'before_expiry'"
+                                    required="trigger_type == 'before_expiry'"/>
+                                <field name="mail_template_id"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
