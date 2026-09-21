@@ -1,7 +1,6 @@
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 {
     "name": "Loyalty Reminder",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "summary": "Rappels email sur seuil de solde ou échéance de carte de fidélité",
     "description": (
         "Envoie un email de rappel automatique au titulaire d'une carte de fidélité "
@@ -14,7 +13,9 @@
     "contributors": "",
     "maintainers": ["RemiFr82"],
     "website": "https://remifr82.me",
-    "license": "LGPL-3",
+    "license": "OPL-1",
+    "price": 69.00,
+    "currency": "EUR",
     "development_status": "Alpha",
     "category": "Sales/Loyalty",
     "application": False,
