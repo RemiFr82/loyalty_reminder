@@ -9,8 +9,14 @@ class LoyaltyCard(models.Model):
     reminder_line_ids = fields.One2many(
         "loyalty.card.reminder.line", "card_id", string="Reminder Lines",
         compute="_compute_reminder_line_ids", store=True, readonly=False, copy=True,
+        context={"active_test": False},
         help="Lignes de rappel effectives de la carte, copiées depuis le programme à la "
-             "création puis overridables indépendamment.",
+             "création puis overridables indépendamment. `active_test: False` est requis "
+             "ici : `active` sert uniquement de statut d'affichage (rappel déjà envoyé), "
+             "pas d'archivage Odoo standard — sans ce contexte, l'ORM masque "
+             "silencieusement les lignes desactivées de ce One2many (y compris en Python, "
+             "pas seulement dans les vues), ce qui viderait `reminder_line_ids` dès qu'un "
+             "rappel a été envoyé.",
     )
 
     @api.depends("program_id")

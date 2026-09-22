@@ -1,6 +1,6 @@
 {
     "name": "Loyalty Reminder",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.3",
     "summary": "Rappels email sur seuil de solde ou échéance de carte de fidélité",
     "description": (
         "Envoie un email de rappel automatique au titulaire d'une carte de fidélité "

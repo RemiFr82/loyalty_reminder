@@ -9,7 +9,7 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Reminders" name="reminders">
                     <field name="reminder_line_ids">
-                        <list editable="bottom">
+                        <tree editable="bottom">
                             <field name="sequence" widget="handle"/>
                             <field name="trigger_type"/>
                             <field name="points_remaining"
@@ -19,7 +19,7 @@
                                 invisible="trigger_type != 'before_expiry'"
                                 required="trigger_type == 'before_expiry'"/>
                             <field name="mail_template_id"/>
-                        </list>
+                        </tree>
                     </field>
                 </page>
             </xpath>

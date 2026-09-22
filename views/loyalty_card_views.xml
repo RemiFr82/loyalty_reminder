@@ -12,7 +12,7 @@
                 <notebook>
                     <page string="Reminders" name="reminders">
                         <field name="reminder_line_ids" context="{'active_test': False}">
-                            <list editable="bottom" decoration-muted="not active">
+                            <tree editable="bottom" decoration-muted="not active">
                                 <field name="active" column_invisible="1"/>
                                 <field name="sequence" widget="handle"/>
                                 <field name="trigger_type"/>
@@ -23,7 +23,7 @@
                                     invisible="trigger_type != 'before_expiry'"
                                     required="trigger_type == 'before_expiry'"/>
                                 <field name="mail_template_id"/>
-                            </list>
+                            </tree>
                         </field>
                     </page>
                 </notebook>
